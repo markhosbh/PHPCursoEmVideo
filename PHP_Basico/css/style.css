@@ -1,0 +1,24 @@
+body{
+    padding: 20px;
+}
+.bGreen{
+    background: darkseagreen;
+    padding:10px;
+    border-radius: 5px;
+}
+
+pre{
+    /*font-family: 'Courgette', cursive;    */
+    background-color: honeydew;
+    border: solid black 1px;
+    padding: 10px 0px; 
+}
+
+p{
+    font-size: 13px;
+}
+
+.tabuada{
+    width: 17.2%; 
+    float: left 
+}
