@@ -69,3 +69,8 @@ p{
 	color: #FFF;
 	background-color: #5d9cec;
 }    
+
+iframe{
+    height: 600px;
+    width: 100%;
+}

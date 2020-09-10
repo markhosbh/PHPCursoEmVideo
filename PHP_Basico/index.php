@@ -2,7 +2,7 @@
     <head>
         <meta charset="utf-8">
         <title>PHP Básico</title>
-        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./css/style.css">        
     </head>
     <body>
         <div class="titulo">
@@ -190,77 +190,91 @@
         </fieldset>    
 
         <h2>Funções Nativas do PHP</h2>
-        <fieldset><legend><h4>Wordwrap</h4></legend>
-            <pre>
-            /*
-            * Esta função quebra o texto por tamanho com base em um valor determinado, sendo 
-            * no nosso exemplo, a cada 10 caractéres. O false, impede que quebre uma palavra, 
-            * caso esta tenha mais de 10 caracteres.
-            */
-           $wordwrap = wordwrap("Este é um exemplo da função wordwrap",10,"< br/>\n",false);
-           echo $wordwrap;    
-            </pre>   
-            <?php
-            /*
-             * Esta função quebra o texto por tamanha com base em um valor determinado, sendo 
-             * no nosso exemplo, a cada 10 caractéres, o false, impede que quebre uma palavra, 
-             * caso esta tenha mais de 10 caracteres.
-             */
-            $wordwrap = wordwrap("Este é um exemplo da função wordwrap", 10, "<br/>\n", false);
-            echo $wordwrap;
-            ?>
-        </fieldset>
+        <fieldset>
+            <ul>
+                <li><b>printf()</b> : Permite exibir uma string com itens formatados.</li>
+                <pre> printf("curso de %s básico","PHP");</pre>
                 
+                <li><b>print_r()</b> : Exibe coleções, objetos e variáveis compostas (vetores e matrizes) de maneira organizada.</li>
+
+                <li><b>wordwrap()</b> : Cria quebras de linha ou divisões em uma string em um tamanho especificado.</li>
+                <pre> $wordwrap = wordwrap("Este é um exemplo da função wordwrap", 10, "< br/>\n", false);</pre>
+
+                <li><b>strlen()</b> : Permite verificar o tamanho de uma string, contando seus caracteres (inclusive espaços em branco).</li>
+
+                <li><b>trim()</b> : Elimina espaços em branco antes e depois de uma string.</li>
+
+                <li><b>ltrim()</b> : Elimina espaços no início de uma string.</li>
+
+                <li><b>rtrim()</b> : Elimina espaços em branco no final de uma string.</li>
+
+                <li><b>str_word_count()</b> : Conta quantas palavras uma string possui.</li>
+                <pre> $str_word_count = str_word_count("Teste da função Str_word_count", 0);</pre>
+
+                <li><b>explode()</b> : Quebra uma string e coloca os itens em um vetor.</li>
+                <pre> $explode = explode(" ", "Teste da função explode");</pre>
+
+                <li><b>str_split()</b> : Coloca cada letra de uma string em uma posição de um vetor.</li>
+                <pre> str_split('marcos santos')</pre>
+                <li><b>implode() ou join()</b> : Transforma um vetor inteiro em uma string.</li>
+                <pre> print_r(implode("#", "Teste da função implode"));</pre>
+
+                <li><b>chr()</b> : Retorna um caractere de acordo com seu código ASCII passado como parâmetro.</li>
+                <pre> chr(67);</pre>
+
+                <li><b>ord()</b> : Retorna o código ASCII de um caractere passado como parâmetro.</li>
+                <pre> ord('c');</pre>
+                
+                <li><b>strtolower()</b>: Converte a string toda para minúsula</li>
+                <pre> strtolower("Curso de PHP Básico");</pre>
+                
+                <li><b>strtoupper()</b>: Converte a string toda para maiúscula</li>
+                <pre> strtoupper("curso de PHP básico");</pre>
+                
+                <li><b>ucfirst()</b>: Converte a primeira letra da string para maiúscula</li>
+                <pre> ucfirst("curso de PHP básico");</pre>
+                
+                <li><b>ucwords()</b>: Converte a primeira letra de cada palavra da string para maiúscula</li>
+                <pre> ucwords("curso de PHP básico");</pre>
+                
+                <li><b>strrev()</b>: Retorna a string escrita de trás pra frente.</li>
+                <pre> strrev("Curso de PHP Básico");</pre>
+                
+                <li><b>strpos()</b>: Procura um determinado trecho da string que quer fazer a busca e retorna a posição dessa. "Case Sensitive"</li>
+                <pre> strpos("Curso de PHP Básico","PHP");</pre>
+                
+                <li><b>stripos()</b>: Procura um determinado trecho da string que quer fazer a busca e retorna a posição dessa. "Ignora o Case Sensitive"</li>
+                <pre> stripos("Curso de PHP Básico","PHP");</pre>
+                
+                <li><b>substr_count()</b>: Procura um determinado trecho da string que quer fazer a busca e retorna a quantidade de vezes que foi encontrada."</li>
+                <pre> substr_count("Curso de PHP Básico PHP","PHP");</pre>
+                
+                <li><b>substr()</b>: Retorna um trecho da string baseado nas posições correspondentes repassadas.(de,até)"</li>
+                <pre> 
+                substr("Curso de PHP Básico",0,5);  //irá retornar da posição 0 até a posição 5 da string
+                substr("Curso de PHP Básico",9);    //irá retornar da posição 9 adiante
+                substr("Curso de PHP Básico",-11);  //irá retornar as 9 posições contando da ultima para a primeira letra. "Acento conta como +1 caractér"
+                </pre>
+                
+                <li><b>str_pad()</b>: Completa o tamanho requerido da string com um delimitador predefinido</li>
+                <pre>
+                //str_pad('Texto','tamanho desejado','delimitador',posição a ser acrescentada
+                str_pad("PHP Básico",22,'_',STR_PAD_RIGHT); //STR_PAD_RIGHT , STR_PAD_CENTER, STR_PAD_LEFT
+                </pre>
+                
+                <li><b>str_repeat()</b>: Utilizada para repetir determinado valor na string.</li>
+                <pre> str_repeat("PHP",4);</pre>
+                
+                <li><b>str_replace()</b>: Substitui determinado valor por outro na string.</li>
+                <pre>str_replace("PHP","PHP Básico","Curso de PHP");</pre>
+            </ul> 
+        </fieldset>
+        <?php
+            echo str_replace("PHP","PHP Básico","Curso de PHP");
+        ?>   
+        <hr>
         
-        <?php 
-            $str_word_count = str_word_count("Teste da função Str_word_count",0);
-            echo "O texto possui <b>{$str_word_count}</b> palavras.<br>";      
-            
-            $explode = "Teste da função explode";
-            $explode = explode(" ", $explode);
-            var_dump($explode);
-            
-            var_dump(implode("#", $explode)); //a funçao join faz a mesma coisa
-            
-            
-            chr(67);//retorna a letra equivalente na tabelas ascii binária do PC
-            
-            ord('c'); //retorna o código da letra equivalente na tabelas ascii binária do PC
-            
-            
-            
-            
-            
-        ?>
-        <p>
-            Função printf() : Permite exibir uma string com itens formatados.
-
-            Função print_r() : Exibe coleções, objetos e variáveis compostas (vetores e matrizes) de maneira organizada.
-
-            Função wordwrap() : Cria quebras de linha ou divisões em uma string em um tamanho especificado.
-
-            Função strlen() : Permite verificar o tamanho de uma string, contando seus caracteres (inclusive espaços em branco).
-
-            Função trim() : Elimina espaços em branco antes e depois de uma string.
-
-            Função ltrim() : Elimina espaços no início de uma string.
-
-            Função rtrim() : Elimina espaços em branco no final de uma string.
-
-            Função str_word_count() : Conta quantas palavras uma string possui.
-
-            Função explode() : Quebra uma string e coloca os itens em um vetor.
-
-            Função str_split() : Coloca cada letra de uma string em uma posição de um vetor.
-
-            Função implode() : Transforma um vetor inteiro em uma string.
-
-            Função chr() : Retorna um caractere de acordo com seu código ASCII passado como parâmetro.
-
-            Função ord() : Retorna o código ASCII de um caractere passado como parâmetro.
-        </p>
-
-
-
+        <!--<iframe frameborder="0" scrolling="no"  src="https://onecompiler.com/php?gclid=CjwKCAjwnef6BRAgEiwAgv8mQc5mkNTqlTFB_MCM6OnHvNLFInl5uhshcP_QNWioY1Wotp3xCEt-ExoCLrMQAvD_BwE"></iframe>-->
+        
     </body>
 </html>
