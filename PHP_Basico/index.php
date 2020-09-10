@@ -3,11 +3,13 @@
         <meta charset="utf-8">
         <title>PHP Básico</title>
         <link rel="stylesheet" href="./css/style.css">        
+        <script language=javascript type="text/javascript" src="scripts/popup.js"></script>
     </head>
     <body>
         <div class="titulo">
             <h1>CURSO EM VÍDEO - PHP BÁSICO</h1>
         </div>
+            <a class="iframe" href="javascript:newPopup()"><?php echo htmlentities("<?php Testar Código ?>"); ?></a> 
         <fieldset><legend><h2>Operadores Aritiméticos</h2></legend>
             <fieldset><legend><h4>Valor Absoluto</h4></legend>
                 <pre>echo abs(-15);</pre>
@@ -194,7 +196,7 @@
             <ul>
                 <li><b>printf()</b> : Permite exibir uma string com itens formatados.</li>
                 <pre> printf("curso de %s básico","PHP");</pre>
-                
+
                 <li><b>print_r()</b> : Exibe coleções, objetos e variáveis compostas (vetores e matrizes) de maneira organizada.</li>
 
                 <li><b>wordwrap()</b> : Cria quebras de linha ou divisões em uma string em um tamanho especificado.</li>
@@ -224,57 +226,57 @@
 
                 <li><b>ord()</b> : Retorna o código ASCII de um caractere passado como parâmetro.</li>
                 <pre> ord('c');</pre>
-                
+
                 <li><b>strtolower()</b>: Converte a string toda para minúsula</li>
                 <pre> strtolower("Curso de PHP Básico");</pre>
-                
+
                 <li><b>strtoupper()</b>: Converte a string toda para maiúscula</li>
                 <pre> strtoupper("curso de PHP básico");</pre>
-                
+
                 <li><b>ucfirst()</b>: Converte a primeira letra da string para maiúscula</li>
                 <pre> ucfirst("curso de PHP básico");</pre>
-                
+
                 <li><b>ucwords()</b>: Converte a primeira letra de cada palavra da string para maiúscula</li>
                 <pre> ucwords("curso de PHP básico");</pre>
-                
+
                 <li><b>strrev()</b>: Retorna a string escrita de trás pra frente.</li>
                 <pre> strrev("Curso de PHP Básico");</pre>
-                
+
                 <li><b>strpos()</b>: Procura um determinado trecho da string que quer fazer a busca e retorna a posição dessa. "Case Sensitive"</li>
                 <pre> strpos("Curso de PHP Básico","PHP");</pre>
-                
+
                 <li><b>stripos()</b>: Procura um determinado trecho da string que quer fazer a busca e retorna a posição dessa. "Ignora o Case Sensitive"</li>
                 <pre> stripos("Curso de PHP Básico","PHP");</pre>
-                
+
                 <li><b>substr_count()</b>: Procura um determinado trecho da string que quer fazer a busca e retorna a quantidade de vezes que foi encontrada."</li>
                 <pre> substr_count("Curso de PHP Básico PHP","PHP");</pre>
-                
+
                 <li><b>substr()</b>: Retorna um trecho da string baseado nas posições correspondentes repassadas.(de,até)"</li>
                 <pre> 
                 substr("Curso de PHP Básico",0,5);  //irá retornar da posição 0 até a posição 5 da string
                 substr("Curso de PHP Básico",9);    //irá retornar da posição 9 adiante
                 substr("Curso de PHP Básico",-11);  //irá retornar as 9 posições contando da ultima para a primeira letra. "Acento conta como +1 caractér"
                 </pre>
-                
+
                 <li><b>str_pad()</b>: Completa o tamanho requerido da string com um delimitador predefinido</li>
                 <pre>
                 //str_pad('Texto','tamanho desejado','delimitador',posição a ser acrescentada
                 str_pad("PHP Básico",22,'_',STR_PAD_RIGHT); //STR_PAD_RIGHT , STR_PAD_CENTER, STR_PAD_LEFT
                 </pre>
-                
+
                 <li><b>str_repeat()</b>: Utilizada para repetir determinado valor na string.</li>
                 <pre> str_repeat("PHP",4);</pre>
-                
+
                 <li><b>str_replace()</b>: Substitui determinado valor por outro na string.</li>
                 <pre>str_replace("PHP","PHP Básico","Curso de PHP");</pre>
             </ul> 
         </fieldset>
         <?php
-            echo str_replace("PHP","PHP Básico","Curso de PHP");
+        echo str_replace("PHP", "PHP Básico", "Curso de PHP");
         ?>   
         <hr>
-        
-        <!--<iframe frameborder="0" scrolling="no"  src="https://onecompiler.com/php?gclid=CjwKCAjwnef6BRAgEiwAgv8mQc5mkNTqlTFB_MCM6OnHvNLFInl5uhshcP_QNWioY1Wotp3xCEt-ExoCLrMQAvD_BwE"></iframe>-->
-        
+
+
+
     </body>
 </html>
