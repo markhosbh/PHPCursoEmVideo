@@ -9,7 +9,7 @@
         <div class="titulo">
             <h1>CURSO EM VÍDEO - PHP BÁSICO</h1>
         </div>
-            <a class="iframe" href="javascript:newPopup()"><?php echo htmlentities("<?php Testar Código ?>"); ?></a> 
+        <a class="iframe" href="javascript:newPopup()"><?php echo htmlentities("<?php Testar Código ?>"); ?></a> 
         <fieldset><legend><h2>Operadores Aritiméticos</h2></legend>
             <fieldset><legend><h4>Valor Absoluto</h4></legend>
                 <pre>echo abs(-15);</pre>
@@ -269,14 +269,206 @@
 
                 <li><b>str_replace()</b>: Substitui determinado valor por outro na string.</li>
                 <pre>str_replace("PHP","PHP Básico","Curso de PHP");</pre>
+
             </ul> 
         </fieldset>
-        <?php
-        echo str_replace("PHP", "PHP Básico", "Curso de PHP");
-        ?>   
+
+
+        <h2>Vetores e Matrizes</h2>
+
+        <fieldset><legend><h4>Vetor</h4></legend>
+            <ul>
+                <li>Declaração e Atrinuição</li>
+                <pre>
+                $vet = array(3,5,8,2); //declara um vetor de 4 posições
+                $vet[] = 7; //atribui novo índice ao vetor
+                print_r($vet); 
+                </pre>  
+
+                <li>Vetor com Range</li>
+                Função utilizada para criação de vertores de contagem sequencial: <b>range("valor inicial","valor final","contador sequencial")</b>
+                <pre>
+                $vetRange = range(5, 20, 5); //irá declar um vetor cujo 5 é o valor inicial, 20 o valor final e irá contar de 5 em 5 até interar 20
+                print_r($vetRange);            
+                </pre>
+
+                <li>Vetor Associativo</li>
+                <pre>
+                $vetAssoc = array(
+                    "Curso" => "PHP",
+                    "Escola" => "Curso em Vídeo",
+                    "Professor" => "Gustavo Guanabara",
+                    "Valor" => 0800
+                );
+                print_r($vetAssoc);    
+                </pre>
+
+                <li>unset</li>
+                Função responsável por Desalocar/Excluir determinada posição do vetor
+                <pre>                
+                $vetUnset = array("A", "B", "C", "Será Excluído", "E", "F");
+                print_r($vetUnset);
+                unset($vetUnset[3]); //O indice 3 do vertor será Desalocado/Excluido
+                print_r($vetUnset);    
+                </pre>
+
+                <li>count</li>
+                Retona a quantidade de elementos do vetor;
+                <pre>
+                echo count(array(1,2,3,4));
+                </pre>
+            </ul>
+        </fieldset>
+        <fieldset><legend><h4>Matriz</h4></legend>
+            Matriz ou vetor multidimensional.<br>
+            Declaclando uma Matriz.
+            <pre>
+            $mat = array(
+                array("A", "B"),
+                array("C", "D"),
+                array("E", "F"),
+            );  
+            print_r($mat);    
+            </pre>
+
+            Sobrescrevendo Valores
+            <pre>
+            $mat = array(
+                array("A", "Vai Ser Substituido"),
+                array("C", "D"),
+                array("Valor Substituto", "F"),
+            ); 
+            print_r($mat);
+
+            $mat[0][1] = $mat[2][0]; //faz com que o valor contido na linha 0 coluna 1 receba o valor contido na linha 2 coluna 0
+            print_r($mat);   
+            </pre>
+        </ul>
+    </fieldset> 
+
+    <fieldset><legend><h4>Foreach</h4></legend>
+        Utilizado para percorrer array.<br>    
+        Foreach = para cada elemento do array <b>X</b> será tratado como <b>Y</b>
+        <pre>
+            $arrayX = range(4, 20, 2);
+            foreach ($arrayX as $valorY) { //irá percorrer todo array e jogar o valor do indice na variavel $valorY
+                echo "{$valorY} ";
+            }
+        </pre>
+
+        Foreach com valores associativos
+        <pre>
+            //Vetor Associativos
+            $vetAssoc = array(
+                "Nome" => "Marcos",
+                "Sobrenome" => "Santos",
+                "idade" => 31,
+                "peso" => 78.9
+            );
+        
+            //Percorrendo e exibindo associação e valores com Foreach
+            foreach ($vetAssoc as $campo => $valor) {
+                echo "<b>{$campo}: </b>{$valor}< br>";
+            }    
+        </pre>                                   
+    </fieldset>
+
+    <fieldset><legend><h4>Manipulando Vetores</h4></legend>
+        <pre>
+        $aManip = array(3,5,8,2,7);
+        print_r($aManip);
+            <?php
+            $aManip = array(3, 5, 8, 2, 7);
+            print_r($aManip);
+            ?>
+        
+        <b>//array_push adiciona um elemento ao final do vetor</b>
+        array_push($aManip,'incluido no final');
+        print_r($aManip);
+            <?php
+            array_push($aManip, 'incluido no final');
+            print_r($aManip);
+            ?>
+        
+        <b>//array_pop remove o ultimo elemento do vetor</b>
+        array_pop($aManip);
+        print_r($aManip);
+            <?php
+            array_pop($aManip);
+            print_r($aManip);
+            ?>
+        
+        <b>//array_unshift insere um elemento ao inicio do vetor</b>
+        array_unshift($aManip, 'incluido no inicio');
+        print_r($aManip);
+            <?php
+            array_unshift($aManip, 'incluido no inicio');
+            print_r($aManip);
+            ?>
+                
+        <b>//array_shift remove um elemento no inicio do vertor</b>
+        array_shift($aManip);
+        print_r($aManip);
+            <?php
+            array_shift($aManip);
+            print_r($aManip);
+            ?>
+        
+        <b>//sort Orderna o vetor pelos elementos</b>
+        sort($aManip);
+        print_r($aManip);
+            <?php
+            sort($aManip);
+            print_r($aManip);
+            ?>
+        
+        <b>//rsort Orderna o vetor de forma decrescente pelos elementos</b>
+        rsort($aManip);
+        print_r($aManip);
+            <?php
+            rsort($aManip);
+            print_r($aManip);
+            ?>
+        
+        <b>//asort Orderna o vetor pelos elementos mantendo os indices associativos</b>
+        asort($aManip);
+        print_r($aManip);
+            <?php
+            asort($aManip);
+            print_r($aManip);
+            ?>
+        
+        <b>//arsort Orderna o vetor de forma decrescente pelos elementos mantendo os indices associativos</b>
+        arsort($aManip);
+        print_r($aManip);
+            <?php
+            arsort($aManip);
+            print_r($aManip);
+            ?>
         <hr>
-
-
-
-    </body>
+        $aManip2 = array(2=>3,5=>5,3=>8,1=>2,0=>7);
+        print_r($aManip2);
+            <?php
+            $aManip2 = array(2 => 3, 5 => 5, 3 => 8, 1 => 2, 0 => 7);
+            print_r($aManip2);
+            ?>
+        
+        <b>//ksort Orderna o vetor pelos indices</b>        
+        ksort($aManip2);
+        print_r($aManip2);
+            <?php
+            ksort($aManip2);
+            print_r($aManip2);
+            ?>
+        
+        <b>//krsort Orderna o vetor pelos indices em maneira decrescente</b>      
+        krsort($aManip2);
+        print_r($aManip2);
+            <?php
+            krsort($aManip2);
+            print_r($aManip2);
+            ?>
+        </pre>
+    </fieldset>            
+</body>
 </html>
